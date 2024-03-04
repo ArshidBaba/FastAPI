@@ -2,7 +2,7 @@
 name = "app"
 version = "0.0.1"
 description = "Ultimate FastAPI Tutorial"
-authors = ["ChristopherGS"]
+authors = ["ArshidB"]
 
 [tool.poetry.dependencies]
 python = "^3.8"

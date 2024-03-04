@@ -1,8 +1,8 @@
-"""add recipe and user tables
+"""Added all tables
 
-Revision ID: da9301b43279
+Revision ID: ec46ad7fc181
 Revises: 
-Create Date: 2021-08-08 13:38:59.871519
+Create Date: 2021-08-14 14:04:42.176345
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = "da9301b43279"
+revision = "ec46ad7fc181"
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -25,6 +25,7 @@ def upgrade():
         sa.Column("surname", sa.String(length=256), nullable=True),
         sa.Column("email", sa.String(), nullable=False),
         sa.Column("is_superuser", sa.Boolean(), nullable=True),
+        sa.Column("hashed_password", sa.String(), nullable=False),
         sa.PrimaryKeyConstraint("id"),
     )
     op.create_index(op.f("ix_user_email"), "user", ["email"], unique=False)
